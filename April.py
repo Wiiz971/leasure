@@ -155,13 +155,14 @@ def yanis_bis():
     return( 'Votre anniversaire tombera le %s %s %s %s'%(semaine[b],birthday[:-8],mois[int(birthday[-7:-5])-1], Ydaten ))      
 
 """ 
-Consigne : On veut connaitre la distance entre deux villes ainsi que le temps que l'on va mettre en velo, en voiture, et a pied pour 
+Consigne : On veut connaitre la distance entre deux villes ainsi que le temps que l'on va mettre en velo, en voiture, (et a pied) pour 
 parcourir cette distance. Le resultat doit être indiqué en heure/min/sec. Une requête GET sera recommandée.
 """
 
 from bs4 import BeautifulSoup
 import urllib3
 import re
+    
     
 def distance_ville():
     def divEuclid(a,b):
@@ -194,16 +195,15 @@ def distance_ville():
     PO=[]
     for i in range(2):
         PO+= [day(L0[i])]
+    print(PO)
     for i in PO:
         i[0]='%s jours'%i[0]
         i[1]='%s heures'%i[1]
         i[2]='%s minutes'%i[2]
-    print(PO)
     velo = ' '.join([i for i in PO[0]])
     voiture = ' '.join([i for i in PO[1]])
-    pied = ' '.join([i for i in PO[2]])
-        
-    return 'Il y a %s entre ces deux villes, temps : velo (16km/h) = %s , voiture(110 km/h) = %s , a pied = %s '%(L, velo, voiture, pied)
+    #pied = ' '.join([i for i in PO[2]])        
+    return 'Il y a %s entre ces deux villes, temps : velo (16km/h) = %s , voiture(110 km/h) = %s '%(L, velo, voiture)#, a pied = %s , pied)
 
 """ 
 Consigne : On veut connaitre la valeur moyenne des éléments d'une liste.
