@@ -193,6 +193,12 @@ créer une liste de nombres entiers aléatoires unique avec python
 """
 def liste(a,b,n):
     return random.sample(range(a,b),n)
+"""
+exemple : 
+>>> l = random.sample(range(1,100), 10)
+>>> l
+[10, 70, 11, 91, 84, 17, 29, 36, 61, 96]
+"""
     
 
     
