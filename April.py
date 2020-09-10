@@ -63,19 +63,15 @@ def yakari(m,n): # m lignes et n colonnes
 * * * * *       
 """
 def pyramide(n):
-    L=' '.join(['*'*i for i in range(n+1,1,-1)])  
-    L1 =L.split(' ')
-    print(L1)
-    S=[]
-    j=0
-    for i in L1:
-        S=[' ']*j
-        for char in i:
-            S+=['%s '%char ]
-        j+=1
-        i=S
-        S=[]
-    return L1
+    for _ in range(n):
+        print("{etoile}".format(etoile = ("*" *_). rjust(n)),"{etoile}".format(etoile = ("*" *_). ljust(n)))
+    print('autre exemple: \n')
+    symbole = "$"
+    space = " "
+    for i in range(n):
+      e = i+1
+      block = symbole+space
+      print("{}{}".format(space*(n-e), (block*e)))
 
 def add(L):
     new=[]
